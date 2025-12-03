@@ -1,17 +1,11 @@
 import React from 'react';
-import { FocusAwareStatusBar, ScrollView, Text, View } from '@/components/ui';
+import { View, Text } from '@/components/ui';
 
-export default function Profile() {
+export default function AboutScreen() {
   return (
-    <>
-      <FocusAwareStatusBar />
-      <ScrollView>
-        <View className="flex-1 px-4 pt-16">
-          <Text className="text-xl font-bold">Profile Tab</Text>
-          <Text className="mt-4 text-base">This is a test profile tab.</Text>
-        </View>
-      </ScrollView>
-    </>
+    <View className="flex-1 items-center justify-center px-4">
+      <Text className="text-2xl font-bold">Mohamed Zayaan Ali</Text>
+      <Text className="text-lg mt-2">SS2300707</Text>
+    </View>
   );
 }
-

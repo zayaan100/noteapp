@@ -4,11 +4,11 @@ const NOTES_KEY = "NOTES_STORAGE_KEY";
 
 // Get all notes
 export async function getNotes() {
-  const data = await AsyncStorage.getItem(NOTES_KEY);
-  return data ? JSON.parse(data) : [];
+  const json = await AsyncStorage.getItem(NOTES_KEY);
+  return json ? JSON.parse(json) : [];
 }
 
-// Save all notes
+// Save notes array
 export async function saveNotes(notes: any[]) {
   await AsyncStorage.setItem(NOTES_KEY, JSON.stringify(notes));
 }
@@ -25,17 +25,17 @@ export async function addNote(text: string) {
   await saveNotes(notes);
 }
 
-// Delete a note
+// Delete note
 export async function deleteNote(id: string) {
   const notes = await getNotes();
-  const filtered = notes.filter((n) => n.id !== id);
+  const filtered = notes.filter((n: any) => n.id !== id);
   await saveNotes(filtered);
 }
 
-// Edit a note
+// Update note
 export async function updateNote(id: string, newText: string) {
   const notes = await getNotes();
-  const updated = notes.map((n) =>
+  const updated = notes.map((n: any) =>
     n.id === id ? { ...n, text: newText } : n
   );
   await saveNotes(updated);

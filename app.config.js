@@ -2,8 +2,8 @@ import 'dotenv/config';
 
 export default {
   expo: {
-    name: "expo-go-villa-sample",
-    slug: "expo-go-villa-sample",
+    name: "Notes App",
+    slug: "notes-app",
     version: "1.0.0",
     scheme: "expo-go-villa-sample",
     platforms: ["ios", "android"],

@@ -1,33 +1,21 @@
 /* eslint-disable react/no-unstable-nested-components */
-import { Link, Redirect, Tabs } from 'expo-router';
+import { Tabs } from 'expo-router';
 import React from 'react';
 
-import { Pressable, Text } from '@/components/ui';
 import {
   Feed as FeedIcon,
   Settings as SettingsIcon,
   Style as StyleIcon,
   Home as ProfileIcon,
 } from '@/components/ui/icons';
-import { useAuth } from '@/app/providers/auth/auth-provider';
 
 export default function TabLayout() {
-  const { status, isFirstTime } = useAuth();
-
-  if (isFirstTime) {
-    return <Redirect href="/(auth)/onboarding" />;
-  }
-
-  if (status === 'signOut') {
-    return <Redirect href="/(auth)/login" />;
-  }
-
   return (
     <Tabs>
 
-      {/* 1️⃣ ADD NOTE (style.tsx) */}
+      {/* Add Note */}
       <Tabs.Screen
-        name="style"
+        name="add-note"
         options={{
           title: 'Add Note',
           headerShown: true,
@@ -35,9 +23,9 @@ export default function TabLayout() {
         }}
       />
 
-      {/* 2️⃣ NOTES (index.tsx) */}
+      {/* Notes */}
       <Tabs.Screen
-        name="index"
+        name="notes"
         options={{
           title: 'Notes',
           headerShown: true,
@@ -45,9 +33,9 @@ export default function TabLayout() {
         }}
       />
 
-      {/* 3️⃣ ABOUT (profile.tsx) */}
+      {/* About */}
       <Tabs.Screen
-        name="profile"
+        name="about"
         options={{
           title: 'About',
           headerShown: true,
@@ -55,7 +43,7 @@ export default function TabLayout() {
         }}
       />
 
-      {/* 4️⃣ SETTINGS (settings.tsx) */}
+      {/* Settings */}
       <Tabs.Screen
         name="settings"
         options={{
