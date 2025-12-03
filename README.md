@@ -37,13 +37,18 @@ Theme Toggle
 
 Images
 About page
-https://imgur.com/a/hkWXgrU
+![About Screen](Documents/about.jpg)
+
 
 Theme
-https://imgur.com/a/mxfz3dk
-https://imgur.com/a/TUx1nnj
+![Theme Light](Documents/theme%201.jpg)
+![Theme Dark](Documents/theme%202.jpg)
+
+
 
 Add and delete notes
-https://imgur.com/a/sNhtGYs
-https://imgur.com/a/EMeX8JG
-https://imgur.com/a/2C61iFC
+![Adding Notes](Documents/adding%20notes.jpg)
+
+![Delete Notes](Documents/delete%20notes.jpg)
+
+![Delete](Documents/delete.jpg)
