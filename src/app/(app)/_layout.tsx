@@ -6,7 +6,7 @@ import { Pressable, Text } from '@/components/ui';
 import {
   Feed as FeedIcon,
   Settings as SettingsIcon,
-  Style as AddNoteIcon,
+  Style as StyleIcon,
   Home as ProfileIcon,
 } from '@/components/ui/icons';
 import { useAuth } from '@/app/providers/auth/auth-provider';
@@ -24,59 +24,47 @@ export default function TabLayout() {
 
   return (
     <Tabs>
-      {/* 1️⃣ PROFILE TAB */}
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: 'Profile',
-          headerShown: false,
-          tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
-          tabBarButtonTestID: 'profile-tab',
-        }}
-      />
 
-      {/* 2️⃣ FEED TAB */}
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Feed',
-          tabBarIcon: ({ color }) => <FeedIcon color={color} />,
-          headerRight: () => <CreateNewPostLink />,
-          tabBarButtonTestID: 'feed-tab',
-        }}
-      />
-
-      {/* 3️⃣ ADD NOTE (previously style.tsx) */}
+      {/* 1️⃣ ADD NOTE (style.tsx) */}
       <Tabs.Screen
         name="style"
         options={{
           title: 'Add Note',
-          headerShown: false,
-          tabBarIcon: ({ color }) => <AddNoteIcon color={color} />,
-          tabBarButtonTestID: 'add-note-tab',
+          headerShown: true,
+          tabBarIcon: ({ color }) => <StyleIcon color={color} />,
         }}
       />
 
-      {/* 4️⃣ SETTINGS (last tab) */}
+      {/* 2️⃣ NOTES (index.tsx) */}
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Notes',
+          headerShown: true,
+          tabBarIcon: ({ color }) => <FeedIcon color={color} />,
+        }}
+      />
+
+      {/* 3️⃣ ABOUT (profile.tsx) */}
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'About',
+          headerShown: true,
+          tabBarIcon: ({ color }) => <ProfileIcon color={color} />,
+        }}
+      />
+
+      {/* 4️⃣ SETTINGS (settings.tsx) */}
       <Tabs.Screen
         name="settings"
         options={{
           title: 'Settings',
           headerShown: false,
           tabBarIcon: ({ color }) => <SettingsIcon color={color} />,
-          tabBarButtonTestID: 'settings-tab',
         }}
       />
+
     </Tabs>
   );
 }
-
-const CreateNewPostLink = () => {
-  return (
-    <Link href={"/feed/add-post" as any} asChild>
-      <Pressable>
-        <Text className="px-3 text-primary-300">Create</Text>
-      </Pressable>
-    </Link>
-  );
-};

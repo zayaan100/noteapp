@@ -3,7 +3,6 @@ import { observer } from 'mobx-react-lite';
 
 import type { OptionType } from '@/components/ui';
 import { Options, useModal } from '@/components/ui';
-import { translate } from '@/lib';
 import { useStores } from '@/stores';
 import type { UIAppearance } from '@/stores/types';
 
@@ -21,11 +20,11 @@ export const ThemeItem = observer(() => {
     [uiTheme, modal]
   );
 
-  // translate() is already reactive to language changes
+  // English-only theme labels
   const themes = [
-    { label: `${translate('settings.theme.dark')} 🌙`, value: 'Dark' },
-    { label: `${translate('settings.theme.light')} 🌞`, value: 'Light' },
-    { label: `${translate('settings.theme.system')} ⚙️`, value: 'System' },
+    { label: `Dark 🌙`, value: 'Dark' },
+    { label: `Light 🌞`, value: 'Light' },
+    
   ];
 
   const theme = themes.find((t) => t.value === uiTheme.selectedTheme);
@@ -33,7 +32,7 @@ export const ThemeItem = observer(() => {
   return (
     <>
       <Item
-        text="settings.theme.title"
+        text="Theme"
         value={theme?.label}
         onPress={modal.present}
       />
