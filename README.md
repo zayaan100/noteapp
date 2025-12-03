@@ -11,7 +11,7 @@ Create and save notes directly on your device.
 All saved notes are displayed in the Notes tab.
 
 
-
+   
 
 
 
