@@ -40,15 +40,27 @@ About page
 ![About Screen](Documents/about.jpg)
 
 
+
+
+
 Theme
+
+
 ![Theme Light](Documents/theme%201.jpg)
+
 ![Theme Dark](Documents/theme%202.jpg)
 
 
 
 Add and delete notes
+
+
 ![Adding Notes](Documents/adding%20notes.jpg)
 
+
+
 ![Delete Notes](Documents/delete%20notes.jpg)
+
+
 
 ![Delete](Documents/delete.jpg)
