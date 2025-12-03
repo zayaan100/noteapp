@@ -6,7 +6,7 @@ import { Pressable, Text } from '@/components/ui';
 import {
   Feed as FeedIcon,
   Settings as SettingsIcon,
-  Style as StyleIcon,
+  Style as AddNoteIcon,
   Home as ProfileIcon,
 } from '@/components/ui/icons';
 import { useAuth } from '@/app/providers/auth/auth-provider';
@@ -21,27 +21,10 @@ export default function TabLayout() {
   if (status === 'signOut') {
     return <Redirect href="/(auth)/login" />;
   }
-  
+
   return (
     <Tabs>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Feed',
-          tabBarIcon: ({ color }) => <FeedIcon color={color} />,
-          headerRight: () => <CreateNewPostLink />,
-          tabBarButtonTestID: 'feed-tab',
-        }}
-      />
-      <Tabs.Screen
-        name="style"
-        options={{
-          title: 'Style',
-          headerShown: false,
-          tabBarIcon: ({ color }) => <StyleIcon color={color} />,
-          tabBarButtonTestID: 'style-tab',
-        }}
-      />
+      {/* 1️⃣ PROFILE TAB */}
       <Tabs.Screen
         name="profile"
         options={{
@@ -51,6 +34,30 @@ export default function TabLayout() {
           tabBarButtonTestID: 'profile-tab',
         }}
       />
+
+      {/* 2️⃣ FEED TAB */}
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Feed',
+          tabBarIcon: ({ color }) => <FeedIcon color={color} />,
+          headerRight: () => <CreateNewPostLink />,
+          tabBarButtonTestID: 'feed-tab',
+        }}
+      />
+
+      {/* 3️⃣ ADD NOTE (previously style.tsx) */}
+      <Tabs.Screen
+        name="style"
+        options={{
+          title: 'Add Note',
+          headerShown: false,
+          tabBarIcon: ({ color }) => <AddNoteIcon color={color} />,
+          tabBarButtonTestID: 'add-note-tab',
+        }}
+      />
+
+      {/* 4️⃣ SETTINGS (last tab) */}
       <Tabs.Screen
         name="settings"
         options={{
